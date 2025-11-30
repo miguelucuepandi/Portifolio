@@ -64,7 +64,7 @@ function removeReview(id) {
 }
 
 btnSubir.addEventListener("click", function(event) {
-    event.preventDefault()
+    //event.preventDefault()
     window.scroll({
         top: 0,
     });
