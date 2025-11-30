@@ -1,0 +1,696 @@
+/* ========== Reset e Raiz ==========*/
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: f1, Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    list-style: none;
+}
+:root{
+    --cor1: #193547;
+    --cor2: #336e94;
+    --cor3: #4594c7;
+    --cor4: #0099dd;
+    --cor5: #a1c7e0;
+    --cor6: aqua;
+    --cor7: aquamarine;
+    --cor8: mediumaquamarine;
+}
+@font-face {
+    font-family: "f1";
+    src: url("../fonts/Cabin-Medium.ttf") format("truetype");
+}
+@font-face {
+    font-family: "f2";
+    src: url("../fonts/Aromatron-Regular.otf") format("opentype");
+}
+@font-face {
+    font-family: "f3";
+    src: url("../fonts/Balloon Craft Italic.otf") format("opentype");
+}
+
+a#btnSubir {
+    background-color: var(--cor8);
+    position: fixed;
+    bottom: -100px;
+    right: 20px;
+    z-index: 500;
+    color: #fff;
+    font-size: 40px;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.8s;
+    padding: 5px;
+}
+a#btnSubir.aparece {
+    bottom: 30px;
+    animation: crescer 0.5s infinite alternate ease-in-out;
+}
+a#btnSubir i {
+    color: #fff;
+}
+body {
+    background-color: #fff;
+}
+@media (max-width: 600px) {
+    a#btnSubir.aparece {
+        right: 10px;
+        bottom: 10px;
+        font-size: 20px;
+        height: 50px;
+        width: 50px;
+    }
+}
+/* ========== Início do Header ==========*/
+body{
+    background-color: var(--cor1);
+}
+header{
+    width: 100%;
+    height: 85px;
+    background-color: var(--cor1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 0px 50px;
+    transition: .5s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav div#logo a{
+    font-size: 40px;
+    text-decoration: none;
+    color: var(--cor8);
+    font-weight: 600;
+}
+
+header nav ul{
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li{
+    margin: 10px;
+}
+
+header nav ul a{
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--cor8);
+    font-weight: 700;
+    transition: .3s;
+    display: block;
+    transform: scale(0.9);
+}
+
+header nav ul a.ativo,
+header nav ul a:hover{
+    color: var(--cor8);
+    border-bottom: 4px solid var(--cor8);
+    transform: scale(1.1);
+}
+
+header nav button#btnMenu{
+    height: 50px;
+    width: 40px;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    background-color: transparent;
+    display: none;
+}
+
+header nav button#btnMenu span.linha{
+    height: 4px;
+    width: 100%;
+    background-color: #fff;
+    display: block;
+    margin: 6px auto;
+    position: relative;
+    transform-origin: center;
+}
+
+header nav button.ativar span.linha:nth-child(2){
+    visibility: hidden;
+}
+
+header nav button.ativar span.linha:nth-child(1){
+    transform: translateY(9px) rotate(-42deg);
+    transition: 0.2s;
+}
+
+header nav button.ativar span.linha:nth-child(3){
+    transform: translateY(-11px) rotate(42deg);
+    transition: 0.2s;
+}
+
+@media (max-width: 800px) {
+    header{
+        height: 80px;
+        padding: 5px 20px;
+    }
+    header nav div#logo a{
+        font-size: 25px;
+    }
+    header nav button#btnMenu{
+        display: block;
+    }
+    
+    header nav ul{
+        position: absolute;
+        top: 80px;
+        left: 1000px;
+        background-color: var(--cor1);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+        padding-bottom: 5px;
+        transition: .8s;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+    }
+    header nav ul li{
+        margin: 5px;
+    }
+    header nav ul li a{
+        padding-left: 10px;
+        font-size: 18px;
+    }
+    header nav ul a.ativo, header nav ul a:hover{
+        transform: scale(0.9);
+        border: none;
+        border-left: 5px solid var(--cor2);
+    }
+    header nav ul.mostrar{
+        left: 0px;
+    }
+}
+/* ========== Fim do Header ==========*/
+
+/* ========== Início do Main ==========*/
+main > h1 {
+    color: #fff;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 40px;
+    font-family: f2;
+}
+@media (max-width: 600px) {
+    main > h1 {
+    font-size: 30px;
+}
+}
+/* Inicio da section top  */
+main section#top{
+    height: 100vh;
+    min-height: 500px;
+    max-height: 900px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+main section#top div.texto{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    height: 100%;
+    width: 55%;
+    padding: 4%;
+}
+
+main section#top div.texto strong{
+    font-size: 16px;
+    color: #fff;
+}
+
+main section#top div.texto h1{
+    font-size: 55px;
+    color: var(--cor8);
+    letter-spacing: 1px;
+    font-family: f1;
+}
+
+main section#top div.texto h2 {
+    font-size: 25px;
+    color: #fff;
+    margin: 8px 0;
+}
+
+main section#top div.texto p{
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+main section#top div.texto a{
+    text-decoration: none;
+    border: 2px solid var(--cor8);
+    padding: 10px 30px;
+    border-radius: 10px;
+    color: var(--cor8);
+    font-weight: bold;
+    font-size: 18px;
+    background-color: transparent;
+    transition: .5s;
+}
+
+main section#top div.texto a:hover {
+    background-color: var(--cor8);
+    color: #fff;
+}
+
+main section#top div.foto {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 8px;
+}
+
+main section#top div.foto img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /*
+    animation: imagemFlutoante 2.5s ease-in-out infinite alternate forwards;
+    */
+}
+
+@media screen and (max-width: 850px) {
+    main section#top {
+        height: auto;
+        padding-top: 80px;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    main section#top div.texto {
+        width: 100%;
+    }
+    
+    main section#top div.foto {
+        width: 90%;
+        max-width: 300px;
+        height: 300px;
+    } 
+}
+
+@media (max-width: 750px) {
+    main section#top {
+        margin: 0;
+    }
+    main section#top div.texto {
+        padding: 25% 5% 5% 5%;
+    }
+    main section#top div.texto h1{
+        font-size: 35px;
+        margin-bottom: 1px;
+    }
+    
+    main section#top div.texto h2 {
+        font-size: 22px;
+    }
+
+    main section#top div.texto p{
+        font-size: 17px;
+    }
+}
+@media (min-width: 800px) {
+    main section#top.revela div.texto h1 {
+        animation: letras 1s ease-in-out forwards;
+    }
+}
+/* fim da section top  */
+
+/* Inicio da section sobre  */
+main section#sobre{
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+main section#sobre div.foto {
+    width: 310px;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 8px;
+    margin: 0 0 30px 0;
+
+}
+
+main section#sobre div.foto img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+}
+main section#sobre div.texto{
+    width: 60%;
+}
+
+main section#sobre div.texto strong{
+    font-size: 16px;
+    color: #fff;
+}
+
+main section#sobre div.texto h1{
+    font-size: 40px;
+    color: var(--cor8);
+    letter-spacing: 1px;
+}
+
+main section#sobre div.texto h2 {
+    font-size: 28px;
+    color: #fff;
+    margin: 8px 0;
+}
+
+main section#sobre div.texto p{
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+main section#sobre div.texto a{
+    text-decoration: none;
+    border: 2px solid var(--cor8);
+    padding: 12px 14px ;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: transparent;
+    transition: .2s;
+}
+main section#sobre div.texto a i {
+        color: #fff;
+}
+main section#sobre div.texto a:hover {
+    background-color: var(--cor8);
+    color: #fff;
+}
+
+@media screen and (max-width: 850px) {
+    main section#sobre {
+        height: auto;
+        flex-direction: column;
+        padding: 10% 5% 0 5%;
+        gap: 5px;
+    }
+    main section#sobre div.foto {
+        display: none;
+    }
+    main section#sobre div.texto {
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 750px) {
+    main section#sobre div.texto {
+        padding: 25% 5% 5% 5%;
+    }
+    main section#sobre div.texto h1{
+        font-size: 35px;
+        margin-bottom: 1px;
+    }
+    
+    main section#sobre div.texto h2 {
+        font-size: 22px;
+    }
+
+    main section#sobre div.texto p{
+        font-size: 17px;
+    }
+}
+@media (min-width: 800px) {
+    main section#sobre.revela div.texto h1 {
+        animation: letras 1s ease-in-out forwards;
+    }
+}
+/* fim da section Sobre  */
+
+/* Inicio da section projectos */
+main section#projectos {
+    margin: 50px 0;
+}
+
+main section#projectos div.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1500px;
+    margin: auto;
+}
+main section#projectos div.container div.projecto {
+    border-radius: 8px;
+    width: 100%;
+    max-width: 340px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 5px var(--cor8);
+    padding: 0 0 10px 0;
+}
+/*
+main section#projectos.revela div.container div.projecto {
+    animation: crescer 2s ease-in-out forwards;
+}
+*/
+main section#projectos div.container div.projecto div.foto {
+    height: 220px;
+    overflow: hidden;
+    width: 100%;
+}
+main section#projectos div.container div.projecto div.foto:hover img{
+    transform: scale(1.1);
+}
+main section#projectos div.container div.projecto div.foto img{
+    height: 100%;
+    width: 100%;
+    transition: 0.3s;
+}
+main section#projectos div.container div.projecto div.texto {
+    padding: 10px;
+}
+main section#projectos div.container div.projecto div.texto h2 {
+    font-size: 24px;
+    color: #fff;
+    margin: 15px 0;
+}
+main section#projectos div.container div.projecto div.texto div.descricao {
+    margin: 10px 0;
+    font-size: 15px;
+    color: #ddd;
+}
+
+main section#projectos div.container div.projecto div.texto ul {
+    display: flex;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+main section#projectos div.container div.projecto div.texto ul li {
+    background-color: #272C6E;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+main section#projectos div.container div.projecto div.texto a.btn {
+    color: #fff;
+    font-size: 18px;
+    background-color: var(--cor8);
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-weight: 500;
+    border-radius: 8px;
+    margin: 8px 0 0 0;
+}
+
+/* Fim da section projectos */
+
+/* Início da section contactos */
+section#contactos {
+    width: 98%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px var(--cor8);
+    margin: 50px auto 30px auto;
+    padding: 30px 5px;
+    gap: 10px;
+}
+section#contactos div.texto {
+    width: 45%;
+}
+section#contactos div.texto h1 {
+    color: var(--cor8);
+    font-size: 25px;
+    text-align: center;
+    transition: all 0.5s;
+    margin: 10px 0 30px 0;
+}
+section#contactos.revela div.texto h1 {
+    margin: 5px 0;
+}
+section#contactos div.texto p {
+    text-align: center;
+    padding: 20px;
+    font-size: 15px;
+}
+section#contactos div.texto img {
+    display: block;
+    width: 300px;
+    height: 300px;
+    margin: 10px auto;
+}
+section#contactos form {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+section#contactos form h2 {
+    margin: 20px 0 10px 0;
+    color: var(--cor2);
+    font-size: 25px;
+    text-align: center;
+}
+section#contactos form textarea, section#contactos form input {
+    width: 70%;
+    margin: 10px 0;
+    border-radius: 10px;
+    padding: 10px;
+    border: 0;
+    background-color: #f0f0f0;
+    color: #000;
+    outline-color: var(--cor8);
+}
+section#contactos form input {
+    height: 50px;
+}
+section#contactos form button {
+    width: 70%;
+    height: 50px;
+    background-color: var(--cor8);
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+section#contactos form button:hover {
+    background-color: var(--cor2);
+}
+@media screen and (max-width: 800px) {
+    section#contactos div.texto {
+        width: 100%;
+    }
+    section#contactos form {
+        width: 100%;
+    }
+    section#contactos form textarea, section#contactos form input, section#contactos form button {
+        width: 90%;
+    }
+}
+/* Fim da section contactos */
+/* ========== Fim do Main ==========*/
+
+/* ========== Início do Footer ==========*/
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: var(--cor1);
+    padding: 30px 0 50px 10px;
+    box-shadow: 0 0 5px var(--cor8);
+
+}
+
+footer h2 {
+    color: #fff;
+    margin: 15px 0;
+    font-size: 25px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    margin: 7px 5px;
+}
+footer i {
+    color: var(--cor7);
+}
+
+footer section#info div.social {
+    display: flex;
+    gap: 10px;
+}
+footer section#info div.social a {
+    font-size: 1.7em;
+    margin: 0;
+}
+footer section#info div.social a:hover {
+    transform: scale(1.2);
+}
+
+footer section#linksR ul {
+    list-style-type: none;
+}
+
+footer section#baixo {
+    width: 100%;
+    text-align: center;
+    
+}
+
+
+@media (max-width: 900px) {
+    footer {
+        justify-content: flex-start;
+        gap: 20px;
+    }
+    footer section#info {
+        width: 90%;
+    }
+}
+@media (max-width: 500px) {
+    footer section {
+        width: 100%;
+    }
+    footer a {
+        font-size: 15px;
+    }
+}
+/* ========== Fim do Footer ==========*/
